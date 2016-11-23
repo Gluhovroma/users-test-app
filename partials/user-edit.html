@@ -1,0 +1,82 @@
+<div class="page-content">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="#/user-list">Users</a>
+                <i class="fa fa-circle"></i>
+            </li> 
+            <li>
+                <a ui-sref="user-detail({'user': userEditCtrl.user_id})">User detail</a>
+                <i class="fa fa-circle"></i>
+            </li> 
+            <li>
+                <a href="">Edit user</a>
+               
+            </li>                            
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">      
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">                       
+                        <span class="caption-subject font-red sbold uppercase">Edit user</span>
+                    </div>                                    
+                </div>
+                <div class="portlet-body">             
+                    <form id="form_sample_1" name="form" class="form-horizontal" novalidate>
+                        <div class="form-body">                                                                
+                            <div class="form-group" ng-class="{'has-error': (form.$submitted || form.uName.$touched) && form.uName.$error.required}">
+                                <label class="control-label col-md-3">User name
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <input type="text" required="" data-ng-model="userEditCtrl.user.user_name" name="uName" class="form-control" /> 
+                                    <div ng-show="form.$submitted || form.uName.$touched"> 
+                                        <span class="help-block" ng-show="form.uName.$error.required"> User name required </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{'has-error': (form.$submitted || form.uEmail.$touched) && (form.uEmail.$error.required || form.uEmail.$error.email)}">
+                                <label class="control-label col-md-3">Email
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <input name="uEmail" required="" data-ng-model="userEditCtrl.user.email" type="email" class="form-control" />
+                                    <div ng-show="form.$submitted || form.uEmail.$touched"> 
+                                        <span class="help-block" ng-show="form.uEmail.$error.required"> Email required </span>
+                                        <span class="help-block" ng-show="form.uEmail.$error.email"> Email is not valid </span>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">User custom id
+                                    
+                                </label>
+                                <div class="col-md-4">
+                                    <input name="uCustomId" data-ng-model="userEditCtrl.user.user_custom" type="text" class="form-control" />                                 
+                                </div>
+                            </div>   
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Enabled
+                                    
+                                </label>
+                                <div class="col-md-4">
+                                    <input name="uEnabled" data-ng-model="userEditCtrl.user.enabled" type="checkbox" />                  
+                                </div>
+                            </div> 
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" value="Save" class="btn green" ng-click="userEditCtrl.save(form)"/>
+                                        <a href="#/user-list" type="button" class="btn grey-salsa btn-outline">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>           
+                </div>
+            </div>
+        </div>
+    </div>
+</div>               

@@ -1,0 +1,61 @@
+<div class="page-content">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="#/user-list">Users</a>
+                <i class="fa fa-circle"></i>
+            </li> 
+            <li>
+                <a ui-sref="user-detail({'user': userBalanceCtrl.user_id})">User detail</a>
+                <i class="fa fa-circle"></i>
+            </li> 
+            <li>
+                <a href="">Change balance</a>               
+            </li>                            
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">       
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-settings font-red"></i>
+                        <span class="caption-subject font-red sbold uppercase">Edit user</span>
+                    </div>                                    
+                </div>
+                <div class="portlet-body">               
+                    <form id="form_sample_1" name="form" class="form-horizontal" novalidate>
+                        <div class="form-body">                                                                    
+                            <div class="form-group" ng-class="{'has-error': (form.$submitted || form.uAmount.$touched) && form.uAmount.$error.required}">
+                                <label class="control-label col-md-3">Amount
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <input type="number" required="" data-ng-model="userBalanceCtrl.balance.amount" name="uAmount" class="form-control" /> 
+                                    <div ng-show="form.$submitted || form.uAmount.$touched"> 
+                                        <span class="help-block" ng-show="form.uAmount.$error.required"> Amount required </span>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Comment</label>
+                                <div class="col-md-4">
+                                    <input name="uComment" data-ng-model="userBalanceCtrl.balance.comment" type="text" class="form-control" />     
+                                </div>
+                            </div>                          
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" value="Save" class="btn green" ng-click="userBalanceCtrl.save(form)"/>
+                                        <a href="#/user-list" type="button" class="btn grey-salsa btn-outline">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>               

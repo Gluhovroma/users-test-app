@@ -1,0 +1,119 @@
+<div class="page-content">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="#/user-list">Users</a>
+                <i class="fa fa-circle"></i>
+            </li> 
+            <li>
+                <a href="">User detail</a>            
+            </li>                            
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">     
+            <div class="portlet light portlet-fit bordered"> 
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-settings font-red"></i>
+                        <span class="caption-subject font-red sbold uppercase">User detail</span>
+                    </div>                                    
+                </div>
+                <div class="portlet-body">              
+                    <div class="row">
+    				    <div class="col-md-6">
+                            <form id="form_sample_1" name="form" class="form-horizontal" novalidate>
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">User id
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" disabled data-ng-model="userDetailCtrl.user.user_id" name="uName" class="form-control" />                                 
+                                        </div>
+                                    </div>                                     
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">User name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" disabled data-ng-model="userDetailCtrl.user.user_name" name="uName" class="form-control" />                                 
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Email                            
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input name="uEmail" disabled  data-ng-model="userDetailCtrl.user.email" type="email" class="form-control" />                                 
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">User custom id                                
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input name="uCustomId" disabled data-ng-model="userDetailCtrl.user.user_custom" type="text" class="form-control" />                                 
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Register date                                
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input name="uCustomId" disabled data-ng-model="userDetailCtrl.user.register_date" type="text" class="form-control" />                                 
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Balance                                
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input name="uCustomId" disabled data-ng-model="userDetailCtrl.user.balance" type="text" class="form-control" />                                 
+                                        </div>
+                                    </div> 
+                                     <div class="form-group">
+                                        <label class="control-label col-md-3">Wallet amount                                
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input name="uCustomId" disabled data-ng-model="userDetailCtrl.user.wallet_amount" type="text" class="form-control" />                                 
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Wallet currency                               
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input name="uCustomId" disabled data-ng-model="userDetailCtrl.user.wallet_currency" type="text" class="form-control" />                                 
+                                        </div>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">User enabled                               
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input name="uCustomId" disabled ng-if="userDetailCtrl.user.enabled" value="yes" type="text" class="form-control" /> 
+                                            <input name="uCustomId" disabled ng-if="!userDetailCtrl.user.enabled" value="no" type="text" class="form-control" />                                  
+                                        </div>
+                                    </div> 
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <a href="#/user-list" type="button" class="btn grey-salsa btn-outline">OK</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                        	<div class="row" style="margin-bottom: 10px;">
+                        		<a ui-sref="user-edit({'user':userDetailCtrl.user.user_id})" type="button" class="col-md-6 btn grey-mint btn-outline sbold uppercase">Edit user</a>             
+                        	</div>
+                        	<div class="row" style="margin-bottom: 10px;">
+                        		<a ui-sref="user-balance({'user':userDetailCtrl.user.user_id})"  type="button" class="col-md-6 btn grey-mint btn-outline sbold uppercase">Change balance</a>                	
+                        	</div>
+                        	<div class="row" style="margin-bottom: 10px;">
+                        		<a ui-sref="transactions-list({'user':userDetailCtrl.user.user_id})" type="button" class="col-md-6 btn grey-mint btn-outline sbold uppercase">List of operations</a>
+                        	</div>
+                        </div>   
+                    </div>           
+                </div>
+            </div>     
+        </div>
+    </div>
+</div>          

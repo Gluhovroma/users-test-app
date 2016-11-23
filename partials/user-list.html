@@ -1,0 +1,63 @@
+<div class="page-content">
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="index.html">Users</a>                                
+            </li>                            
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-settings font-red"></i>
+                        <span class="caption-subject font-red sbold uppercase">List of users</span>
+                    </div>                                    
+                </div>
+                <div class="portlet-body">
+                    <div class="table-toolbar">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <a ui-sref="user-add" id="sample_editable_1_new" class="btn green"> Add
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                            </div>                                      
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                        <thead>
+                            <tr>
+                                <th> User name </th>
+                                <th> Register date </th>
+                                <th> Email </th>
+                                <th> Wallet amount </th>
+                                <th> Currency </th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in userListCtrl.users">
+                                <td ng-bind="::item.user_name"></td>
+                                <td ng-bind="::item.register_date | date : 'dd.MM.yyyy' "></td>
+                                <td ng-bind="::item.email"></td>
+                                <td ng-bind="::item.wallet_amount"></td>
+                                <td ng-bind="::item.wallet_currency"></td>
+                                <td>
+                                    <a class="edit" ui-sref="user-detail({'user': item.user_id})"> Detail </a>
+                                </td>                                                
+                            </tr>                                   
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <center>
+                            <button ng-show="userListCtrl.showLoadButton" ng-click="userListCtrl.load()" class="btn">Load...</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
